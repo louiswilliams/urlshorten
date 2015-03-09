@@ -44,9 +44,10 @@ app.get('/g/:hash', function (req, res) {
 });
 
 app.get('/:hash', function (req, res) {
+  console.log(req.params.hash);
   short.retrieve(req.params.hash).then(function (result) {
     console.log(">> Retrieved >> " + result.hash + " -> " + result.URL);
-    res.redirect(result.URL);
+    res.redirect(addhttp(result.URL));
   }, function (err) {
     console.log(err);
     res.redirect('/');
@@ -63,3 +64,10 @@ app.use(function(req, res, next) {
 app.listen(3003, function () {
   console.log("Started server on 3003");
 });
+
+function addhttp(url) {
+    if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
+        url = "http://" + url;
+    }
+    return url;
+}
