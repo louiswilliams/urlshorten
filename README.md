@@ -3,6 +3,8 @@ Super lightweight url shortener
 
 Zero configuration url shortener and API
 
+Live site: http://s.extrakt.us/
+
 API
 ---
 `GET /c/[:url]` (Create shortened url)
