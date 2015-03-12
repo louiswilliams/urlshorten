@@ -1,7 +1,9 @@
 Super lightweight url shortener
 ================================
 
-Zero configuration url shortener and API
+Zero configuration url shortener and API.
+
+Requires a MongoDB Server running on port 27017.
 
 Live site: http://s.extrakt.us/
 
