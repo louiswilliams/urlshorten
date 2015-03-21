@@ -1,13 +1,15 @@
 Super lightweight url shortener
 ================================
 
-Zero configuration url shortener and API
+Zero configuration url shortener and API.
+
+Requires a MongoDB Server running on port 27017.
 
 Live site: http://s.extrakt.us/
 
 API
 ---
-`GET /c/[:url]` (Create shortened url)
+`GET /c/:url` (Create shortened url)
 
 * Input
 
@@ -20,7 +22,7 @@ API
   * `url`: Shortened URL
 
 
-`GET /g/[:hash]` (Decode hash)
+`GET /g/:hash` (Decode hash)
 
 * Input
 
@@ -31,7 +33,7 @@ API
   * `url`: Original URL
 
 
-`GET /[:hash]` (Decode and redirect)
+`GET /:hash` (Decode and redirect)
 
 * Input
 
