@@ -9,15 +9,16 @@ short.connection.on('error', function (err) {
   throw new Error(err);
 });
 
-app.use(logger('dev'));
+app.use(logger('common'));
 
 app.get('/', function (req, res) {
   res.send();
 });
 
-app.get('/c/:url', function (req, res) {
+app.get('/c/*', function (req, res) {
+  var url = req.url.substr(req.url.indexOf('/c/') + 3);
   short.generate({
-    URL: req.params.url
+    URL: url
   }).then(function (doc) {
     console.log(">> Hashed >> " + doc.URL + " -> " + doc.hash);
 
