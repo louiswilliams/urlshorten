@@ -5,7 +5,7 @@ Zero configuration url shortener and API.
 
 Requires a MongoDB Server running on port 27017.
 
-Live site: http://s.extrakt.us/
+Live example site: http://s.louiswilliams.org/
 
 API
 ---
